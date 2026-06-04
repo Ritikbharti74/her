@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Favorite Person ❤️</title>
+    <!-- Tailwind CSS for modern, beautiful styling -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@400;600&display=swap');
+        .font-romantic { font-family: 'Dancing Script', cursive; }
+        .font-sans { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-pink-50 font-sans text-gray-800 scroll-smooth">
+
+    <!-- 1. HERO SECTION -->
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-4 bg-gradient-to-b from-rose-100 to-pink-50 relative overflow-hidden">
+        <!-- Floating hearts background effect -->
+        <div class="absolute inset-0 pointer-events-none opacity-20">
+            <div class="absolute top-10 left-10 text-4xl animate-bounce">❤️</div>
+            <div class="absolute top-1/3 right-12 text-3xl animate-pulse">💖</div>
+            <div class="absolute bottom-20 left-1/4 text-3xl animate-bounce">✨</div>
+        </div>
+
+        <h1 class="text-6xl md:text-8xl font-romantic text-rose-600 mb-6 drop-shadow-sm">
+            Hey [Her Name],
+        </h1>
+        <p class="text-xl md:text-2xl text-rose-700 max-w-xl mx-auto font-medium leading-relaxed">
+            I made this space just for us. There are a few things I've been wanting to tell you...
+        </p>
+        <div class="mt-12 animate-bounce">
+            <a href="#letter" class="bg-rose-500 hover:bg-rose-600 text-white font-semibold px-8 py-3 rounded-full shadow-lg transition duration-300">
+                Scroll Down 👇
+            </a>
+        </div>
+    </section>
+
+    <!-- 2. THE LETTER / CONFESSION -->
+    <section id="letter" class="py-20 px-4 max-w-3xl mx-auto text-center">
+        <div class="bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-rose-100">
+            <span class="text-4xl">💌</span>
+            <h2 class="text-4xl font-romantic text-rose-600 my-4">From My Heart</h2>
+            <div class="space-y-6 text-lg text-gray-600 text-left md:px-6">
+                <p>
+                    From the moment you walked into my life, everything changed for the better. I never knew that someone could make me laugh so effortlessly, feel so safe, and look forward to tomorrow so much.
+                </p>
+                <p>
+                    [Insert a specific story here! E.g., "I still think about our first date at the coffee shop, when I was so nervous I spilled half my drink, but you just smiled..."]
+                </p>
+                <p>
+                    You are my best friend, my biggest supporter, and my absolute favorite person. Loving you is the easiest thing I've ever done.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. MEMORY GALLERY -->
+    <section class="py-16 bg-rose-100/50 px-4">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-4xl font-romantic text-rose-600 mb-2">Our Best Moments</h2>
+            <p class="text-gray-500 mb-10">A few of my absolute favorite memories with you.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Photo Card 1 -->
+                <div class="bg-white p-4 rounded-2xl shadow-md transform hover:rotate-2 transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=500" alt="Memory 1" class="rounded-xl w-full h-64 object-cover mb-4">
+                    <p class="font-romantic text-2xl text-rose-600">Where it began</p>
+                </div>
+                <!-- Photo Card 2 -->
+                <div class="bg-white p-4 rounded-2xl shadow-md transform hover:-rotate-2 transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500" alt="Memory 2" class="rounded-xl w-full h-64 object-cover mb-4">
+                    <p class="font-romantic text-2xl text-rose-600">The endless laughs</p>
+                </div>
+                <!-- Photo Card 3 -->
+                <div class="bg-white p-4 rounded-2xl shadow-md transform hover:rotate-1 transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=500" alt="Memory 3" class="rounded-xl w-full h-64 object-cover mb-4">
+                    <p class="font-romantic text-2xl text-rose-600">My favorite view</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. THE INTERACTIVE QUESTION -->
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-4 bg-gradient-to-b from-pink-50 to-rose-100">
+        <div id="question-container" class="bg-white p-10 md:p-16 rounded-3xl shadow-2xl border border-rose-100 max-w-xl w-full transition-all">
+            <h2 id="question-text" class="text-4xl md:text-5xl font-romantic text-rose-600 mb-8">
+                Will you be my forever? 🌹
+            </h2>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4" id="button-group">
+                <button id="yesBtn" onclick="celebrate()" class="bg-rose-500 hover:bg-rose-600 text-white font-bold px-8 py-4 rounded-full shadow-lg transform hover:scale-110 transition duration-300 w-full sm:w-auto text-lg cursor-pointer">
+                    Yes, absolutely! 💖
+                </button>
+                <button id="noBtn" onmouseover="moveButton()" onclick="moveButton()" class="bg-gray-200 hover:bg-gray-300 text-gray-600 font-medium px-6 py-3 rounded-full transition duration-300 w-full sm:w-auto cursor-pointer md:absolute">
+                    No 🤔
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- JAVASCRIPT FOR INTERACTIVE FUN -->
+    <script>
+        // Trick "No" button: It runs away when hovered or clicked on desktop/mobile
+        function moveButton() {
+            const noBtn = document.getElementById('noBtn');
+            // Generate random coordinates within the viewport boundaries
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - 40) + 20;
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - 40) + 20;
+            
+            noBtn.style.left = `${x}px`;
+            noBtn.style.top = `${y}px`;
+            noBtn.style.position = 'fixed';
+        }
+
+        // Action when she clicks "Yes"
+        function celebrate() {
+            const container = document.getElementById('question-container');
+            container.innerHTML = `
+                <div class="animate-fade-in">
+                    <span class="text-6xl animate-bounce inline-block">🎉🥳❤️</span>
+                    <h2 class="text-5xl font-romantic text-rose-600 my-6">I knew you'd say yes!</h2>
+                    <p class="text-lg text-gray-600">You've made me the happiest person alive. I love you to the moon and back! 🌙✨</p>
+                    <div class="mt-8 text-rose-400 font-romantic text-3xl">Forever & Always</div>
+                </div>
+            `;
+            
+            // Optional: You can trigger browser confetti here if desired!
+        }
+    </script>
+</body>
+</html>
