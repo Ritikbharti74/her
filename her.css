@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@400;600&display=swap');
+
+.font-romantic {
+    font-family: 'Dancing Script', cursive;
+}
+
+.font-sans {
+    font-family: 'Inter', sans-serif;
+}
+
+.love-video {
+    max-width: 90%;
+    max-height: 70vh;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
